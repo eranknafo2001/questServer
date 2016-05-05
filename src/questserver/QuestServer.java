@@ -30,17 +30,16 @@ public class QuestServer extends PApplet {
 		String messgeFC = thisClient.readString();
 		if (messgeFC == null)
 			return;
-		String type=messgeFC.substring(0, 2);
-		int clientNum=Integer.parseInt(messgeFC.substring(3, 4));
-		String messege=messgeFC.substring(5);
+		String type = messgeFC.substring(0, 2);
+		int clientNum = Integer.parseInt(messgeFC.substring(3, 4));
+		String messege = messgeFC.substring(5);
 		if (type.equals("ss")) {
 			println("[log] client num : " + clientNum + ", says: " + messege);
-		}else if(type.equals("qq")){
+		} else if (type.equals("qq")) {
 			mainServer.disconnect(thisClient);
-			println("[log] client number : "+clientNum+", has disconected");
+			println("[log] client number : " + clientNum + ", has disconected");
 		}
-		
-		
+
 		background(0);
 	}
 
